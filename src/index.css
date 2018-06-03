@@ -44,7 +44,7 @@ div.note:active {
     cursor: -webkit-grabbing;
 }
 
-div.note p {
+div.note .text {
     font-size: 22px;
     padding: 5px;
     font-family: "Shadows Into Light", Arial;
@@ -62,8 +62,8 @@ div.note > span {
     transition: opacity .25s linear;
 }
 
-div.note button {
-    margin: 2px;
+div.note .btn {
+    margin: 6px;
 }
 
 div.note > textarea {
@@ -78,7 +78,7 @@ div.board button {
 }
 
 #add {
-  background-color: #5cb85c;
+  color: #5cb85c;
   height: 3em;
 }
 
@@ -93,13 +93,26 @@ div.board button {
     font-size: 1em;
 }
 
+.text {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 10px 15px 10px;
+    overflow: hidden;
+    height: 100px;
+    margin-top: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
 #edit {
   color: #337ab7;
 }
 
 
 #save {
-  color: #5cb85c;
+  color:#555;
 }
 
 #remove {
