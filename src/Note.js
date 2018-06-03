@@ -33,10 +33,10 @@ class Note extends Component {
 // displays the form to edit text of note
     renderForm() {
         return (
-            <div class="note">
+            <div className="note">
                 <form>
-                    <textarea class="text" autoFocus={true} />
-                    <a id="save" class="btn" onClick={this.saveNote}><FaFloppyO /></a>
+                    <textarea className="text" autoFocus={true} />
+                    <a id="save" className="btn" onClick={this.saveNote}><FaFloppyO /></a>
                 </form>
             </div>
 
@@ -46,11 +46,11 @@ class Note extends Component {
 // displays the text of note
     renderDisplay(){
         return (
-            <div class="note">
-                <p class="text">Sample Note...</p>
+            <div className="note">
+                <p className="text">{this.props.children}</p>
                 <span>
-                    <a id="edit" class="btn" onClick={this.editNote}><FaPencil /></a>
-                    <a id="remove" class="btn"><FaTrash /></a>
+                    <a id="edit" className="btn" onClick={this.editNote}><FaPencil /></a>
+                    <a id="remove" className="btn"><FaTrash /></a>
                 </span>
             </div>
         )
