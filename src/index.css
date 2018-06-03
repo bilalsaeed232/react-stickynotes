@@ -80,6 +80,17 @@ div.board button {
 #add {
   color: #5cb85c;
   height: 3em;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2em;
+  background-color: indigo;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  text-shadow:orange 30px 0px 10px;
+  vertical-align: middle;
 }
 
 .btn {

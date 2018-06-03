@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FaPlus from 'react-icons/lib/fa/plus';
 
 import Note from './Note';
 
@@ -24,6 +25,8 @@ class Board extends Component {
         }
 
         this.eachNote = this.eachNote.bind(this);
+        this.add = this.add.bind(this);
+        this.nextId = this.nextId.bind(this);
     }
 
     eachNote(note, i) {
@@ -35,11 +38,26 @@ class Board extends Component {
         )
     }
 
+    add(note) {
+        this.setState((prevState) => ({
+            notes: [ ...prevState.notes, 
+                { note: note}
+             ]
+        }))
+    }
+
+
+    nextId() {
+        this.uniqueId = this.uniqueId || 0;
+        return this.uniqueId++;
+    }
+
 
     render() {
         return (
             <div className="board">
                 {this.state.notes.map(this.eachNote)}
+                <a id="add" className="btn" onClick={this.add.bind(null, "new Note...")}><FaPlus /></a>
             </div>
         )
     }
