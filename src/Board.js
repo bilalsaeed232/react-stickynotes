@@ -27,12 +27,14 @@ class Board extends Component {
         this.eachNote = this.eachNote.bind(this);
         this.add = this.add.bind(this);
         this.nextId = this.nextId.bind(this);
+        this.edit = this.edit.bind(this);
     }
 
     eachNote(note, i) {
         return (
             <Note index={i}
-                  key={i}   >
+                  key={i}  
+                  onChange={ this.edit } >
                   {note.note}
             </Note>
         )
@@ -46,6 +48,11 @@ class Board extends Component {
         }))
     }
 
+    edit(newNote, id) {
+        this.setState((prevState => ({
+            notes: prevState.notes.map( (note) => note.id !== id ? note : { ...note, note: newNote } )
+        })))
+    }
 
     nextId() {
         this.uniqueId = this.uniqueId || 0;

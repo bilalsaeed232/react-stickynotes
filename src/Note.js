@@ -16,15 +16,26 @@ class Note extends Component {
         this.saveNote = this.saveNote.bind(this);
     }
 
+    componentDidUpdate() {
+        var textArea;
+        if(this.state.editing){
+            textArea = this._newText;
+            textArea.focus();
+            textArea.select();
+        }
+    }
+
 // change the render mode to edit
     editNote() {
         this.setState({
             editing: true
-        })
+        });
     }
 
 // save your changes and update the state
     saveNote() {
+
+        this.props.onChange(this._newText.value, this.props.index)
         this.setState({
             editing: false
         })
@@ -38,7 +49,7 @@ class Note extends Component {
                     <textarea 
                         className="text" autoFocus={true} 
                         ref={ (input) => this._newText = input }
-                        defaultValue={this._newText}    
+                        defaultValue={this.props.children}    
                         />
                     <a id="save" className="btn" onClick={this.saveNote}><FaFloppyO /></a>
                 </form>
