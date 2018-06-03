@@ -35,7 +35,11 @@ class Note extends Component {
         return (
             <div className="note">
                 <form>
-                    <textarea className="text" autoFocus={true} />
+                    <textarea 
+                        className="text" autoFocus={true} 
+                        ref={ (input) => this._newText = input }
+                        defaultValue={this._newText}    
+                        />
                     <a id="save" className="btn" onClick={this.saveNote}><FaFloppyO /></a>
                 </form>
             </div>
