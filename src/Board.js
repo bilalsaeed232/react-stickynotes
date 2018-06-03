@@ -31,8 +31,8 @@ class Board extends Component {
 
     eachNote(note, i) {
         return (
-            <Note index={i}
-                  key={i}  
+            <Note index={note.id}
+                  key={note.id}  
                   onChange={ this.edit } >
                   {note.note}
             </Note>
@@ -42,7 +42,7 @@ class Board extends Component {
     add(note) {
         this.setState((prevState) => ({
             notes: [ ...prevState.notes, 
-                { note: note}
+                { id: this.nextId(),note: note}
              ]
         }))
     }
