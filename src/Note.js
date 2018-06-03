@@ -4,7 +4,7 @@ class Note extends Component {
     render(){
         return (
             <div class="note">
-                <h1>Note</h1>
+                <p>Sample Note...</p>
             </div>
         )
     }
